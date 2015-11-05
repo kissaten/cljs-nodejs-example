@@ -1,18 +1,31 @@
-(ns express_sample
-  (:require [cljs.nodejs :as node]))
+(ns server.core
+  (:require-macros
+   [cljs.core.async.macros :as m :refer [go go-loop alt!]])
+  (:require
+   [cljs.nodejs :as nodejs]
+   [cljs.core.async :as async :refer [chan close! timeout put!]]
+   [reagent.core :as reagent :refer [atom]]))
 
-(def express (node/require "express"))
-(def app (. express (createServer)))
+(enable-console-print!)
 
-(defn hello-world [req res]
-  (.send res "Hello World"))
+(def express (nodejs/require "express"))
 
-(defn -main [& args]
-  (let [port 3000]
-    (doto app
-      (.use (. express (logger)))
-      (.get "/" hello-world)
-      (.listen 3000))
-    (println (str "Express server started on port: " port))))
+(defn handler [req res]
+  (if (= "https" (aget (.-headers req) "x-forwarded-proto"))
+    (.redirect res (str "http://" (.get req "Host") (.-url req)))
+    (go
+      (.set res "Content-Type" "text/html")
+      (.send res "<p>Hello from ClojureScript and Express</p>"))))
+
+(defn server [port success]
+  (doto (express)
+    (.get "/" handler)
+    (.use (.static express "resources/public"))
+    (.listen port success)))
+
+(defn -main [& mess]
+  (let [port (or (.-PORT (.-env js/process)) 1337)]
+    (server port
+            #(println (str "Server running at http://127.0.0.1:" port "/")))))
 
 (set! *main-cli-fn* -main)

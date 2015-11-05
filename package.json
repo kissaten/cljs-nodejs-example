@@ -8,7 +8,10 @@
     "test": "test"
   },
   "dependencies": {
-    "express": "~3.3.8"
+    "express": "4.13.3",
+    "xmlhttprequest": "*",
+    "xmldom": "0.1.19",
+    "source-map-support": "*"
   },
   "devDependencies": {},
   "scripts": {
