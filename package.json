@@ -16,15 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/evanepio/cljs-nodejs-example.git"
+    "url": "https://github.com/kissaten/cljs-nodejs-example.git"
   },
   "keywords": [
     "toy",
     "example"
   ],
-  "author": "Evan Porter",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/evanepio/cljs-nodejs-example/issues"
+    "url": "https://github.com/kissaten/cljs-nodejs-example/issues"
   }
 }
