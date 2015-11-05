@@ -3,6 +3,8 @@ cljs-nodejs-example
 
 An example of using ClojureScript to make a node.js app.
 
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 Requirements
 ============
 
@@ -21,4 +23,3 @@ This will create the target/js/myexample.js file. This is what you can run with 
     node target/js/myexample.js
 
 And there you go, a "Hello World!" that's over 12,000 lines of JavaScript!
-
