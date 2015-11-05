@@ -1,0 +1,30 @@
+{
+  "name": "cljs-nodejs-example",
+  "version": "0.0.0",
+  "description": "A toy example using ClojureScript on node.js",
+  "main": "target/js/myexample.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "~3.3.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evanepio/cljs-nodejs-example.git"
+  },
+  "keywords": [
+    "toy",
+    "example"
+  ],
+  "author": "Evan Porter",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/evanepio/cljs-nodejs-example/issues"
+  }
+}
