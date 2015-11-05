@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [org.clojure/clojurescript "0.0-1586"]
                  [org.bodil/cljs-noderepl "0.1.7"]]
+  :min-lein-version "2.0.0"
   :hooks [leiningen.cljsbuild]
   :plugins [[lein-cljsbuild "0.3.0"]]
   :cljsbuild {
@@ -15,4 +16,3 @@
                                    :target :nodejs
                                    :optimizations :simple
                                    :pretty-print true }}]})
-
