@@ -20,7 +20,6 @@
 (defn server [port success]
   (doto (express)
     (.get "/" handler)
-    (.use (.static express "resources/public"))
     (.listen port success)))
 
 (defn -main [& mess]
