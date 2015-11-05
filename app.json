@@ -8,7 +8,7 @@
             "url": "heroku/nodejs"
         },
         {
-            "url": "heroku/clojure"
+            "url": "https://github.com/heroku/heroku-buildpack-clojure"
         }
     ]
 }
